@@ -16,7 +16,6 @@ public class PlayerMove : MonoBehaviour {
     private Vector3 player_Move = Vector3.zero;
 
     private float player_ToPointDistance;
-
     private float gravity = 9.8f;
     private float height;
 
@@ -51,16 +50,10 @@ public class PlayerMove : MonoBehaviour {
 
     void CheckIfFinishedMovement()
     {
-        // if we DID NOT finished movement
         if (!finished_Movement)
         {
-            if (!anim.IsInTransition(0) && !anim.GetCurrentAnimatorStateInfo(0).IsName("Stand")
-                && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.8f)
+            if (!anim.IsInTransition(0) && !anim.GetCurrentAnimatorStateInfo(0).IsName("Stand") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.8f)
             {
-                // normalized time of the animation is represented from 0 to 1
-                // 0 is the beginning of the animation
-                // 0.5 is the middle of the animation
-                // 1 is the end of the animation
                 finished_Movement = true;
             }
         }
@@ -95,18 +88,13 @@ public class PlayerMove : MonoBehaviour {
 
                 }
             }
-        } // if mouse button down
+        }
 
         if (canMove)
         {
             anim.SetFloat("Walk", 1.0f);
-
             Vector3 target_Temp = new Vector3(target_Pos.x, transform.position.y, target_Pos.z);
-
-            transform.rotation = Quaternion.Slerp(transform.rotation,
-                Quaternion.LookRotation(target_Temp - transform.position),
-                15.0f * Time.deltaTime);
-
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target_Temp - transform.position), 15.0f * Time.deltaTime);
             player_Move = transform.forward * moveSpeed * Time.deltaTime;
 
             if (Vector3.Distance(transform.position, target_Pos) <= 0.1f)
