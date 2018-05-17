@@ -61,6 +61,10 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Script\Camera\MouseScript.cs" />
+    <Compile Include="Assets\Script\EnemyScript\BossControl.cs" />
+    <Compile Include="Assets\Script\EnemyScript\BossFXDamage.cs" />
+    <Compile Include="Assets\Script\EnemyScript\BossSpecialAttacks.cs" />
+    <Compile Include="Assets\Script\EnemyScript\BossStateChecker.cs" />
     <Compile Include="Assets\Script\EnemyScript\EnemyAttack.cs" />
     <Compile Include="Assets\Script\EnemyScript\EnemyControl.cs" />
     <Compile Include="Assets\Script\EnemyScript\EnemyControlAnotherWay.cs" />

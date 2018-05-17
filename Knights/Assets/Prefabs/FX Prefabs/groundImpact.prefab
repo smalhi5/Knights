@@ -32002,9 +32002,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
-  radius: 0.3
-  damageCount: 10
+    m_Bits: 512
+  radius: 5
+  damageCount: 15
 --- !u!114 &114827744483862126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -32016,4 +32016,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd18a4c0975c5e428f03ff5d879bd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 2
+  timer: 3

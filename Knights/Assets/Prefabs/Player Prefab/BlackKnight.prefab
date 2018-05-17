@@ -560,7 +560,8 @@ GameObject:
   - component: {fileID: 143723070664511104}
   - component: {fileID: 114013880496678900}
   - component: {fileID: 114222316774835724}
-  m_Layer: 0
+  - component: {fileID: 114930572725391066}
+  m_Layer: 10
   m_Name: BlackKnight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2265,6 +2266,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ad438881d503447915755aa9a7d5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114930572725391066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951610933814280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3dc27bcab8e4448b9ed178e278a751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!137 &137351318701422638
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

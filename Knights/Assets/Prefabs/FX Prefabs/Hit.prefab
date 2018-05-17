@@ -28046,5 +28046,5 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
-  radius: 0.3
-  damageCount: 20
+  radius: 2
+  damageCount: 25

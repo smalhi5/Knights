@@ -307,8 +307,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
-  radius: 1
-  damageCount: 25
+  radius: 2
+  damageCount: 40
   fireExplosion: {fileID: 1295225198179992, guid: 6890533e0b7794915a8cbfad0a40702c,
     type: 2}
 --- !u!114 &114721072411729806
