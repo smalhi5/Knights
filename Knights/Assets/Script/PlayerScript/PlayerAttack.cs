@@ -127,6 +127,15 @@ public class PlayerAttack : MonoBehaviour
                 playerEnergy.takeEnergy(lightlingSkillCost);
             }
         }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            playerMove.TargetPosition = transform.position;
+
+            if (playerMove.FinishedMovement && canAttack)
+            {
+                anim.SetInteger("Atk", 2);
+            }
+        }
         else
         {
             anim.SetInteger("Atk", 0);
