@@ -18,4 +18,16 @@ public class PlayerEnergy : MonoBehaviour {
         energy -= amount;
         energyImg.fillAmount = energy / 100;
     }
+
+    public void RestoreEnergy(float restore)
+    {
+        energy += restore;
+
+        if (energy > 100f)
+        {
+            energy = 100f;
+        }
+
+        energyImg.fillAmount = energy / 100;
+    }
 }
