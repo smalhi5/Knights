@@ -17,11 +17,20 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private bool canAttack = true;
     private PlayerMove playerMove;
+    private PlayerEnergy playerEnergy;
+
+    public float groundImpactSkillCost = 5f;
+    public float kickSkillCost = 5f;
+    public float tornadoSkillCost = 10f;
+    public float fireShieldSkillCost = 15f;
+    public float healSkillCost = 10f;
+    public float lightlingSkillCost = 20f;
 
     void Awake(){
 
         anim = GetComponent<Animator>();
         playerMove = GetComponent<PlayerMove>();
+        playerEnergy = GetComponent<PlayerEnergy>();
     }
 
     void Update(){
@@ -52,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && playerEnergy.energy >= groundImpactSkillCost)
         {
             playerMove.TargetPosition = transform.position;
 
@@ -60,9 +69,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 fadeImages[0] = 1;
                 anim.SetInteger("Atk", 1);
+                playerEnergy.takeEnergy(groundImpactSkillCost);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && playerEnergy.energy > kickSkillCost)
         {
             playerMove.TargetPosition = transform.position;
 
@@ -70,9 +80,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 fadeImages[1] = 1;
                 anim.SetInteger("Atk", 2);
+                playerEnergy.takeEnergy(kickSkillCost);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && playerEnergy.energy >= tornadoSkillCost)
         {
             playerMove.TargetPosition = transform.position;
 
@@ -80,9 +91,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 fadeImages[2] = 1;
                 anim.SetInteger("Atk", 3);
+                playerEnergy.takeEnergy(tornadoSkillCost);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4) && playerEnergy.energy > fireShieldSkillCost)
         {
             playerMove.TargetPosition = transform.position;
 
@@ -90,9 +102,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 fadeImages[3] = 1;
                 anim.SetInteger("Atk", 4);
+                playerEnergy.takeEnergy(fireShieldSkillCost);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        else if (Input.GetKeyDown(KeyCode.Alpha5) && playerEnergy.energy > healSkillCost)
         {
             playerMove.TargetPosition = transform.position;
 
@@ -100,9 +113,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 fadeImages[4] = 1;
                 anim.SetInteger("Atk", 5);
+                playerEnergy.takeEnergy(healSkillCost);
             }
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButtonDown(1) && playerEnergy.energy >= lightlingSkillCost)
         {
             playerMove.TargetPosition = transform.position;
 
@@ -110,6 +124,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 fadeImages[5] = 1;
                 anim.SetInteger("Atk", 6);
+                playerEnergy.takeEnergy(lightlingSkillCost);
             }
         }
         else
